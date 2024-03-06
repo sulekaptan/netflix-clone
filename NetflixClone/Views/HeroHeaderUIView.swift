@@ -41,6 +41,7 @@ class HeroHeaderUIView: UIView {
     //image'e gradient eklemek
     private func addGradient() {
         let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = bounds
         gradientLayer.colors = [
             UIColor.clear.cgColor,
             UIColor.systemBackground.cgColor
