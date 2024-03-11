@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E421DC0C2B9F4CC50021EFBA /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E421DC0B2B9F4CC50021EFBA /* TitleTableViewCell.swift */; };
 		E495120F2B98E17600C0C8FD /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495120E2B98E17600C0C8FD /* APICaller.swift */; };
 		E49512112B98F47200C0C8FD /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49512102B98F47200C0C8FD /* Title.swift */; };
 		E49512132B98FC2200C0C8FD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49512122B98FC2200C0C8FD /* Extensions.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E421DC0B2B9F4CC50021EFBA /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		E495120E2B98E17600C0C8FD /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		E49512102B98F47200C0C8FD /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 		E49512122B98FC2200C0C8FD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				E4B740F52B951EA8005EA5E8 /* CollectionViewTableViewCell.swift */,
 				E4968B632B978C0A0002452F /* HeroHeaderUIView.swift */,
 				E49512162B9905E500C0C8FD /* TitleCollectionViewCell.swift */,
+				E421DC0B2B9F4CC50021EFBA /* TitleTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E421DC0C2B9F4CC50021EFBA /* TitleTableViewCell.swift in Sources */,
 				E4B740ED2B94A869005EA5E8 /* SearchViewController.swift in Sources */,
 				E49512172B9905E500C0C8FD /* TitleCollectionViewCell.swift in Sources */,
 				E4B740D82B94A539005EA5E8 /* MainTabBarViewController.swift in Sources */,
