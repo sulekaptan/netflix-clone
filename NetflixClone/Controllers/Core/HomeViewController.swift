@@ -41,6 +41,8 @@ class HomeViewController: UIViewController {
         
         configureNavbar()
         
+        APICaller.shared.getMovie(with: "Harry potter")
+        
     }
     
     private func configureNavbar(){
