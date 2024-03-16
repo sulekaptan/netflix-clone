@@ -33,13 +33,20 @@ class TitlePreviewViewController: UIViewController {
         button.backgroundColor = .red
         button.setTitle("Download", for: .normal)
         button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 8
+        button.layer.masksToBounds = true
         return button
     }()
     
-    private let webView : WKWebView = WKWebView()
+    private let webView : WKWebView = {
+       let webView =  WKWebView()
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        return webView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
 
         view.addSubview(webView)
         view.addSubview(titleLabel)
@@ -51,9 +58,10 @@ class TitlePreviewViewController: UIViewController {
     
     func configureConstraints(){
         let webViewConstraints = [
-            webView.topAnchor.constraint(equalTo: view.topAnchor),
+            webView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
             webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            webView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            webView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            webView.heightAnchor.constraint(equalToConstant: 300)
         ]
         NSLayoutConstraint.activate(webViewConstraints)
         
@@ -65,9 +73,28 @@ class TitlePreviewViewController: UIViewController {
         
         let overviewLabelConstraints = [
             overviewLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 15),
-            overviewLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
+            overviewLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            overviewLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ]
         NSLayoutConstraint.activate(overviewLabelConstraints)
+        
+        let downloadButtonConstraints = [
+            downloadButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            downloadButton.topAnchor.constraint(equalTo: overviewLabel.bottomAnchor, constant: 25),
+            downloadButton.widthAnchor.constraint(equalToConstant: 140),
+            downloadButton.heightAnchor.constraint(equalToConstant: 40)
+        ]
+        NSLayoutConstraint.activate(downloadButtonConstraints)
     }
     
+    func configure(with model: TitlePreviewViewModel){
+        titleLabel.text = model.title
+        overviewLabel.text = model.titleOverview
+        
+        guard let url = URL(string: "https://www.youtube.com/embed/\(model.youtubeView.id.videoId)") else {
+            return
+        }
+        
+        webView.load(URLRequest(url: url))
+    }
 }
